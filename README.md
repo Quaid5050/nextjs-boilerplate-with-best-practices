@@ -36,6 +36,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🎨 Icons with [Lucide React](https://lucide.dev)
 - 🔔 Toast notifications with [Sonner](https://sonner.emilkowal.ski)
 - 🎯 Class name utilities with clsx and tailwind-merge
+- 📅 Date manipulation with [Day.js](https://day.js.org)
 - 📏 Linter with [ESLint](https://eslint.org) (default Next.js, Next.js Core Web Vitals, Tailwind CSS and Antfu configuration)
 - 💖 Code Formatter with Prettier
 - 🦊 Husky for Git Hooks (replaced by Lefthook)
@@ -681,6 +682,86 @@ cn('px-2 py-1', 'px-4 py-2'); // Result: 'py-2 px-4'
 // Combining with existing className prop
 cn('base-class', className);
 ```
+
+### Date Manipulation with Day.js
+
+The project uses [Day.js](https://day.js.org) for date manipulation. Day.js is a lightweight alternative to Moment.js with a similar API and excellent performance.
+
+#### Setup
+
+Day.js is configured with useful plugins in `src/libs/dayjs.ts`:
+- **relativeTime**: Human-readable relative time (e.g., "2 hours ago")
+- **utc**: UTC timezone support
+- **timezone**: Timezone conversion
+- **duration**: Duration formatting
+- **localizedFormat**: Localized date formats
+
+#### Usage
+
+```typescript
+import dayjs from '@/libs/dayjs';
+
+// Basic usage
+const now = dayjs();
+const date = dayjs('2024-01-15');
+
+// Formatting
+dayjs().format('YYYY-MM-DD'); // '2024-01-15'
+dayjs().format('DD/MM/YYYY'); // '15/01/2024'
+dayjs().format('MMMM D, YYYY'); // 'January 15, 2024'
+
+// Relative time
+dayjs().fromNow(); // 'a few seconds ago'
+dayjs().subtract(2, 'hours').fromNow(); // '2 hours ago'
+
+// Manipulation
+dayjs().add(1, 'day');
+dayjs().subtract(1, 'month');
+dayjs().startOf('day');
+dayjs().endOf('month');
+
+// Comparison
+dayjs().isBefore(dayjs('2024-01-01'));
+dayjs().isAfter(dayjs('2024-01-01'));
+dayjs().isSame(dayjs('2024-01-15'), 'day');
+
+// Duration
+dayjs.duration(2, 'hours').humanize(); // '2 hours'
+```
+
+#### Features
+
+- **Lightweight**: Only 2KB minified and gzipped
+- **Immutable**: All operations return new instances
+- **Chainable**: Fluent API for easy chaining
+- **Plugin System**: Extensible with plugins
+- **TypeScript**: Full TypeScript support
+- **i18n Support**: Locale support for internationalization
+- **Timezone Support**: Built-in timezone handling
+
+#### Common Use Cases
+
+```typescript
+import dayjs from '@/libs/dayjs';
+
+// Format dates for display
+const formatted = dayjs().format('MMM D, YYYY');
+
+// Calculate time differences
+const daysAgo = dayjs().diff(dayjs('2024-01-01'), 'days');
+
+// Check if date is in range
+const isInRange = dayjs().isBetween(startDate, endDate);
+
+// Get start/end of periods
+const startOfWeek = dayjs().startOf('week');
+const endOfMonth = dayjs().endOf('month');
+
+// Relative time for "time ago" displays
+const timeAgo = dayjs(pastDate).fromNow();
+```
+
+For more information, visit the [Day.js documentation](https://day.js.org/docs/en/display/format).
 
 ### Deploy to production
 
