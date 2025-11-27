@@ -1262,6 +1262,21 @@ See [LICENSE](LICENSE) for more information.
 
 ---
 
-Made with ♥ by [Quaid Ahmed](https://github.com/quaid5050) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/quaid5050.svg?style=social&label=Follow%20%40quaid5050)](https://twitter.com/quaid5050)
+## Sponsor this project
+
+If you find this project helpful, please consider sponsoring it to help support continued development and maintenance.
+
+### [Quaid Ahmed](https://github.com/quaid5050)
+
+**Quaid Ahmed** - Creator and maintainer of this boilerplate
+
+- 🌐 [GitHub](https://github.com/quaid5050)
+- 🐦 [Twitter](https://twitter.com/quaid5050)
+
+[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/quaid5050)
+
+---
+
+Made with ♥ by [Quaid Ahmed](https://github.com/quaid5050) [![GitHub](https://img.shields.io/github/followers/quaid5050?label=Follow%20%40quaid5050&style=social)](https://github.com/quaid5050)
 
 Looking for a custom boilerplate to kick off your project? I'd be glad to discuss how I can help you build one. Feel free to reach out anytime!
