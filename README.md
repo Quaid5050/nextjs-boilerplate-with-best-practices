@@ -171,7 +171,6 @@ Built-in features from Next.js:
 
 Optional features (easy to add):
 
-- 🔑 Multi-tenancy, Role-based access control (RBAC)
 - 🔗 Web 3 (Base, MetaMask, Coinbase Wallet, OKX Wallet)
 
 ### Philosophy
@@ -209,7 +208,7 @@ npm run dev
 
 Open http://localhost:3000 with your favorite browser to see your project.
 
-Need advanced features? Multi-tenancy & Teams, Roles & Permissions, Shadcn UI, End-to-End Typesafety with oRPC, Stripe Payment, Light / Dark mode. Try [Next.js Boilerplate Pro](https://nextjs-boilerplate.com/pro-saas-starter-kit).
+Need advanced features? Shadcn UI, End-to-End Typesafety with oRPC, Stripe Payment, Light / Dark mode. Try [Next.js Boilerplate Pro](https://nextjs-boilerplate.com/pro-saas-starter-kit).
 
 ### Translation (i18n) setup
 
