@@ -30,6 +30,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - ♻️ Type-safe environment variables with T3 Env
 - ⌨️ Form handling with React Hook Form
 - 🔴 Validation library with Zod
+- 🗃️ State management with Zustand
 - 📏 Linter with [ESLint](https://eslint.org) (default Next.js, Next.js Core Web Vitals, Tailwind CSS and Antfu configuration)
 - 💖 Code Formatter with Prettier
 - 🦊 Husky for Git Hooks (replaced by Lefthook)
@@ -133,6 +134,7 @@ After defining the environment variables in your GitHub Actions, your localizati
 │   ├── libs                        # 3rd party libraries configuration
 │   ├── locales                     # Locales folder (i18n messages)
 │   ├── styles                      # Styles folder
+│   ├── stores                      # Zustand stores folder
 │   ├── templates                   # Templates folder
 │   ├── types                       # Type definitions
 │   ├── utils                       # Utilities folder
@@ -208,6 +210,77 @@ To run Storybook tests in headless mode, you can use the following command:
 ```shell
 npm run storybook:test
 ```
+
+### State Management with Zustand
+
+The project uses [Zustand](https://github.com/pmndrs/zustand) for state management. Zustand is a small, fast, and scalable state management solution with a minimal API.
+
+#### Store Structure
+
+Stores are located in the `src/stores` directory. An example store is provided at `src/stores/use-store.ts`:
+
+```typescript
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+
+interface StoreState {
+  count: number;
+  increment: () => void;
+  decrement: () => void;
+  reset: () => void;
+}
+
+export const useStore = create<StoreState>()(
+  devtools(
+    persist(
+      (set) => ({
+        count: 0,
+        increment: () => set((state) => ({ count: state.count + 1 })),
+        decrement: () => set((state) => ({ count: state.count - 1 })),
+        reset: () => set({ count: 0 }),
+      }),
+      {
+        name: 'app-store',
+      },
+    ),
+    {
+      name: 'AppStore',
+    },
+  ),
+);
+```
+
+#### Using Stores in Components
+
+You can use the store in any React component:
+
+```typescript
+'use client';
+
+import { useStore } from '@/stores/use-store';
+
+export const Counter = () => {
+  const { count, increment, decrement, reset } = useStore();
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+};
+```
+
+#### Features
+
+- **Devtools**: The store includes Zustand devtools middleware for debugging in development
+- **Persistence**: The store uses the persist middleware to save state to localStorage
+- **TypeScript**: Full TypeScript support with type-safe state and actions
+- **Minimal API**: Simple and intuitive API for managing global state
+
+For more information, visit the [Zustand documentation](https://github.com/pmndrs/zustand).
 
 ### Deploy to production
 
