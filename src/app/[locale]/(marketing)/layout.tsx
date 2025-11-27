@@ -18,12 +18,6 @@ export default async function Layout(props: {
               <Link href="/" className="text-gray-900 hover:text-gray-600">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-900 hover:text-gray-600">
-                About
-              </Link>
-              <Link href="/portfolio" className="text-gray-900 hover:text-gray-600">
-                Portfolio
-              </Link>
             </div>
             <LocaleSwitcher />
           </nav>
