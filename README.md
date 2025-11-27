@@ -37,6 +37,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🔔 Toast notifications with [Sonner](https://sonner.emilkowal.ski)
 - 🎯 Class name utilities with clsx and tailwind-merge
 - 📅 Date manipulation with [Day.js](https://day.js.org)
+- ✨ Animations with [Framer Motion](https://www.framer.com/motion)
 - 📏 Linter with [ESLint](https://eslint.org) (default Next.js, Next.js Core Web Vitals, Tailwind CSS and Antfu configuration)
 - 💖 Code Formatter with Prettier
 - 🦊 Husky for Git Hooks (replaced by Lefthook)
@@ -762,6 +763,124 @@ const timeAgo = dayjs(pastDate).fromNow();
 ```
 
 For more information, visit the [Day.js documentation](https://day.js.org/docs/en/display/format).
+
+### Animations with Framer Motion
+
+The project uses [Framer Motion](https://www.framer.com/motion) for animations and transitions. Framer Motion provides a powerful, declarative animation library for React with gesture support and layout animations.
+
+#### Setup
+
+Framer Motion is installed and ready to use. Example animation components are provided in `src/components/animations/`:
+- `PageTransition` - Smooth page transitions
+- `FadeIn` - Fade-in animation wrapper
+
+#### Basic Usage
+
+```typescript
+'use client';
+
+import { motion } from 'framer-motion';
+
+export const AnimatedComponent = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      Content here
+    </motion.div>
+  );
+};
+```
+
+#### Using Pre-built Animation Components
+
+```typescript
+'use client';
+
+import { FadeIn } from '@/components/animations/fade-in';
+import { PageTransition } from '@/components/animations/page-transition';
+
+export const MyComponent = () => {
+  return (
+    <PageTransition>
+      <FadeIn delay={0.2}>
+        <h1>Animated Content</h1>
+      </FadeIn>
+    </PageTransition>
+  );
+};
+```
+
+#### Gesture Support
+
+```typescript
+'use client';
+
+import { motion } from 'framer-motion';
+
+export const GestureExample = () => {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="px-4 py-2 bg-blue-500 text-white rounded"
+    >
+      Hover me
+    </motion.button>
+  );
+};
+```
+
+#### Layout Animations
+
+```typescript
+'use client';
+
+import { motion, AnimatePresence } from 'framer-motion';
+
+export const ListExample = ({ items }: { items: string[] }) => {
+  return (
+    <AnimatePresence>
+      {items.map((item) => (
+        <motion.div
+          key={item}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 20 }}
+          transition={{ duration: 0.3 }}
+        >
+          {item}
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  );
+};
+```
+
+#### Features
+
+- **Declarative API**: Simple, intuitive syntax for animations
+- **Gesture Support**: Built-in hover, tap, drag, and pan gestures
+- **Layout Animations**: Automatic animations when layout changes
+- **Performance**: Optimized animations with GPU acceleration
+- **TypeScript**: Full TypeScript support
+- **Variants**: Reusable animation variants
+- **Orchestration**: Control animation sequences and delays
+- **Page Transitions**: Smooth transitions between pages
+
+#### Common Use Cases
+
+- **Page Transitions**: Smooth fade/slide transitions between routes
+- **Micro-interactions**: Button hover effects, card interactions
+- **List Animations**: Stagger animations for lists
+- **Modal Animations**: Smooth open/close animations
+- **Loading States**: Animated spinners and skeletons
+- **Scroll Animations**: Animate elements on scroll
+- **Drag & Drop**: Interactive drag and drop interfaces
+
+For more information, visit the [Framer Motion documentation](https://www.framer.com/motion).
 
 ### Deploy to production
 
