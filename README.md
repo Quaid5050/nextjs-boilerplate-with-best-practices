@@ -34,6 +34,8 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🔄 Data fetching with React Query (TanStack Query)
 - 🔗 URL state management with nuqs
 - 🎨 Icons with [Lucide React](https://lucide.dev)
+- 🔔 Toast notifications with [Sonner](https://sonner.emilkowal.ski)
+- 🎯 Class name utilities with clsx and tailwind-merge
 - 📏 Linter with [ESLint](https://eslint.org) (default Next.js, Next.js Core Web Vitals, Tailwind CSS and Antfu configuration)
 - 💖 Code Formatter with Prettier
 - 🦊 Husky for Git Hooks (replaced by Lefthook)
@@ -562,6 +564,123 @@ Lucide includes 1000+ icons. Some commonly used ones:
 - User: `User`, `Settings`, `LogOut`, `Bell`
 
 Browse all icons at [lucide.dev/icons](https://lucide.dev/icons).
+
+### Toast Notifications with Sonner
+
+The project uses [Sonner](https://sonner.emilkowal.ski) for toast notifications. Sonner provides beautiful, accessible toast notifications that work seamlessly with Next.js.
+
+#### Setup
+
+Sonner is already configured with a `Toaster` component in the root layout. The toaster is positioned at the top-right with rich colors enabled.
+
+#### Usage
+
+```typescript
+'use client';
+
+import { toast } from 'sonner';
+
+export const NotificationExample = () => {
+  const handleSuccess = () => {
+    toast.success('Operation completed successfully!');
+  };
+
+  const handleError = () => {
+    toast.error('Something went wrong');
+  };
+
+  const handleInfo = () => {
+    toast.info('Here is some information');
+  };
+
+  const handlePromise = async () => {
+    const promise = fetch('/api/data');
+    
+    toast.promise(promise, {
+      loading: 'Loading...',
+      success: 'Data loaded successfully!',
+      error: 'Failed to load data',
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={handleSuccess}>Success Toast</button>
+      <button onClick={handleError}>Error Toast</button>
+      <button onClick={handleInfo}>Info Toast</button>
+      <button onClick={handlePromise}>Promise Toast</button>
+    </div>
+  );
+};
+```
+
+#### Features
+
+- **Lightweight**: Small bundle size with minimal dependencies
+- **Accessible**: Built with accessibility in mind
+- **Customizable**: Easy to style and customize
+- **Promise Support**: Built-in support for async operations
+- **Rich Colors**: Beautiful default styling with rich colors
+- **Position Control**: Easy to change toast position
+- **TypeScript**: Full TypeScript support
+
+For more information, visit the [Sonner documentation](https://sonner.emilkowal.ski).
+
+### Class Name Utilities
+
+The project includes a utility function `cn` (class names) that combines `clsx` and `tailwind-merge` for managing Tailwind CSS classes.
+
+#### Usage
+
+The `cn` utility is available at `src/utils/cn.ts`:
+
+```typescript
+import { cn } from '@/utils/cn';
+
+export const Button = ({ variant, className, ...props }) => {
+  return (
+    <button
+      className={cn(
+        'px-4 py-2 rounded-md font-medium',
+        {
+          'bg-blue-500 text-white': variant === 'primary',
+          'bg-gray-200 text-gray-900': variant === 'secondary',
+        },
+        className
+      )}
+      {...props}
+    />
+  );
+};
+```
+
+#### Benefits
+
+- **Conditional Classes**: Use `clsx` for conditional class application
+- **Conflict Resolution**: `tailwind-merge` automatically resolves Tailwind class conflicts
+- **Type-Safe**: Full TypeScript support
+- **Flexible**: Accepts strings, objects, arrays, and conditional logic
+
+#### Example Use Cases
+
+```typescript
+import { cn } from '@/utils/cn';
+
+// Conditional classes
+cn('base-class', isActive && 'active-class', isDisabled && 'disabled-class');
+
+// With objects
+cn('base-class', {
+  'text-red-500': hasError,
+  'text-green-500': isSuccess,
+});
+
+// Merging Tailwind conflicts (last one wins)
+cn('px-2 py-1', 'px-4 py-2'); // Result: 'py-2 px-4'
+
+// Combining with existing className prop
+cn('base-class', className);
+```
 
 ### Deploy to production
 
