@@ -1,8 +1,8 @@
 # Boilerplate and Starter for Next.js 16+, Tailwind CSS 4, and TypeScript.
 
-🚀 Boilerplate and Starter for Next.js with App Router, Tailwind CSS, and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Lefthook (replacing Husky), Lint-Staged, Vitest (replacing Jest), Testing Library, Playwright, Commitlint, VSCode, Tailwind CSS, Error Monitoring with [Sentry](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo), Logging with LogTape (replacing Pino.js) and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), AI-powered code reviews with CodeRabbit, Secure with [Arcjet](https://launch.arcjet.com/Q6eLbRE) (Bot detection, Rate limiting, Attack protection, etc.), and more.
+🚀 Boilerplate and Starter for Next.js with App Router, Tailwind CSS, and TypeScript ⚡️ Built with best practices and prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Lefthook (replacing Husky), Lint-Staged, Vitest (replacing Jest), Testing Library, Playwright, Commitlint, VSCode, Tailwind CSS, Error Monitoring with [Sentry](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo), Logging with LogTape (replacing Pino.js) and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), AI-powered code reviews with CodeRabbit, Secure with [Arcjet](https://launch.arcjet.com/Q6eLbRE) (Bot detection, Rate limiting, Attack protection, etc.), and more.
 
-Clone this project and use it to create your own Next.js project.
+This boilerplate follows industry best practices for project structure, code organization, type safety, state management, and production deployment. Clone this project and use it to create your own Next.js project with confidence.
 
 ### Features
 
@@ -67,7 +67,22 @@ Optional features (easy to add):
 
 - 🔗 Web 3 (Base, MetaMask, Coinbase Wallet, OKX Wallet)
 
-### Philosophy
+### Philosophy & Best Practices
+
+This boilerplate is built following industry best practices and modern development standards:
+
+- **Best Practices First**: Follows Next.js best practices, TypeScript conventions, and React patterns
+- **Clean Architecture**: Well-organized project structure with clear separation of concerns
+- **Type Safety**: Full TypeScript coverage with strict mode and proper type definitions
+- **Code Quality**: ESLint, Prettier, and automated code quality checks
+- **Testing**: Comprehensive testing setup with Vitest and Playwright
+- **Documentation**: Extensive documentation and inline code comments
+- **Production Ready**: Optimized for production with monitoring, error tracking, and security
+- **Developer Experience**: Prioritizes developer productivity with modern tooling
+- **Maintainability**: Clean, readable code following SOLID principles
+- **Scalability**: Architecture designed to scale with your application
+
+Additional principles:
 
 - Nothing is hidden from you, allowing you to make any necessary adjustments to suit your requirements and preferences.
 - Dependencies are regularly updated on a monthly basis
