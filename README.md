@@ -33,6 +33,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🗃️ State management with Zustand
 - 🔄 Data fetching with React Query (TanStack Query)
 - 🔗 URL state management with nuqs
+- 🎨 Icons with [Lucide React](https://lucide.dev)
 - 📏 Linter with [ESLint](https://eslint.org) (default Next.js, Next.js Core Web Vitals, Tailwind CSS and Antfu configuration)
 - 💖 Code Formatter with Prettier
 - 🦊 Husky for Git Hooks (replaced by Lefthook)
@@ -488,6 +489,79 @@ export default async function PerfumePage({
 - **Tab Navigation**: Active tab state
 
 For more information, visit the [nuqs documentation](https://nuqs.47ng.com/).
+
+### Icons with Lucide React
+
+The project uses [Lucide React](https://lucide.dev) for icons. Lucide provides a beautiful, consistent icon set that's tree-shakeable and works perfectly with React and TypeScript.
+
+#### Usage
+
+**Direct import (simple usage):**
+
+```typescript
+import { Search, Heart, ShoppingCart, User } from 'lucide-react';
+
+export const IconExample = () => {
+  return (
+    <div className="flex gap-4">
+      <Search className="w-5 h-5" />
+      <Heart className="w-5 h-5 text-red-500" />
+      <ShoppingCart className="w-5 h-5" />
+      <User className="w-5 h-5" />
+    </div>
+  );
+};
+```
+
+**Centralized icon registry (recommended for larger projects):**
+
+The project includes a centralized icon registry at `src/components/icons/icon.tsx`:
+
+```typescript
+import { Icons } from '@/components/icons/icon';
+
+export const IconExample = () => {
+  const SearchIcon = Icons.search;
+  const CartIcon = Icons.shoppingCart;
+  const UserIcon = Icons.user;
+
+  return (
+    <div className="flex gap-4">
+      <SearchIcon className="w-5 h-5" />
+      <CartIcon className="w-5 h-5" />
+      <UserIcon className="w-5 h-5" />
+    </div>
+  );
+};
+```
+
+Benefits of the centralized registry:
+- **Consistent naming**: All icons follow a consistent naming convention
+- **Easy to find**: All available icons in one place
+- **Type-safe**: Full TypeScript support with autocomplete
+- **Customizable**: Can add custom icons or wrappers
+- **Maintainable**: Easy to update or replace icons across the app
+
+#### Features
+
+- **Tree-shakeable**: Only imports icons you use, keeping bundle size small
+- **TypeScript**: Full TypeScript support with type-safe icon names
+- **Customizable**: Icons accept standard React props (className, size, color, etc.)
+- **Consistent**: Beautiful, consistent design system
+- **Accessible**: Icons are SVG-based and can be made accessible with proper ARIA attributes
+- **Tailwind Compatible**: Works seamlessly with Tailwind CSS classes
+
+#### Common Icons
+
+Lucide includes 1000+ icons. Some commonly used ones:
+
+- Navigation: `Menu`, `X`, `ChevronDown`, `ArrowRight`
+- Actions: `Search`, `Filter`, `Sort`, `Edit`, `Trash`
+- Social: `Heart`, `Share`, `Bookmark`, `Star`
+- E-commerce: `ShoppingCart`, `Package`, `CreditCard`
+- User: `User`, `Settings`, `LogOut`, `Bell`
+
+Browse all icons at [lucide.dev/icons](https://lucide.dev/icons).
 
 ### Deploy to production
 
