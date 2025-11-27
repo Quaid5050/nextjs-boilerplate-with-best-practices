@@ -4,9 +4,9 @@ const config: KnipConfig = {
   // Files to exclude from Knip analysis
   ignore: [
     'checkly.config.ts',
-    'src/libs/I18n.ts',
-    'src/types/I18n.ts',
-    'src/utils/Helpers.ts',
+    'src/libs/i18n.ts',
+    'src/types/i18n.ts',
+    'src/utils/helpers.ts',
     'tests/**/*.ts',
   ],
   // Dependencies to ignore during analysis

@@ -1,4 +1,4 @@
-import { routing } from '@/libs/I18nRouting';
+import { routing } from '@/libs/i18n-routing';
 
 export const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_APP_URL) {

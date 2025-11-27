@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-react';
 import { page } from 'vitest/browser';
 import messages from '@/locales/en.json';
-import { BaseTemplate } from './BaseTemplate';
+import { BaseTemplate } from './base-template';
 
 describe('Base template', () => {
   describe('Render method', () => {

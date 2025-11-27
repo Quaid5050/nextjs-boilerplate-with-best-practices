@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { LocaleSwitcher } from '@/components/LocaleSwitcher';
+import { LocaleSwitcher } from '@/components/locale-switcher';
 
 export default async function Layout(props: {
   children: React.ReactNode;

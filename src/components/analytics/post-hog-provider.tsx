@@ -3,8 +3,8 @@
 import posthog from 'posthog-js';
 import { PostHogProvider as PHProvider } from 'posthog-js/react';
 import { useEffect } from 'react';
-import { Env } from '@/libs/Env';
-import { SuspendedPostHogPageView } from './PostHogPageView';
+import { Env } from '@/libs/env';
+import { SuspendedPostHogPageView } from './post-hog-page-view';
 
 export const PostHogProvider = (props: { children: React.ReactNode }) => {
   useEffect(() => {
