@@ -27,13 +27,16 @@ export default async function Index(props: IIndexProps) {
   });
 
   return (
-    <div>
-      <h1 className="mb-4 text-3xl font-bold">
+    <div className="p-8">
+      <h1 className="mb-4 text-3xl font-bold text-gray-900">
         Welcome
       </h1>
-      <p className="text-lg">
+      <p className="text-lg text-gray-700">
         {t('meta_description')}
       </p>
+      <div className="mt-8 p-4 bg-blue-100 rounded-lg">
+        <p className="text-blue-800">If you can see this blue box, Tailwind CSS is working!</p>
+      </div>
     </div>
   );
 };
