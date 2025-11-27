@@ -23,7 +23,7 @@ const aj = arcjet.withRule(
 
 export default async function proxy(
   request: NextRequest,
-  event: NextFetchEvent,
+  _event: NextFetchEvent,
 ) {
   // Verify the request with Arcjet
   // Use `process.env` instead of Env to reduce bundle size in middleware
