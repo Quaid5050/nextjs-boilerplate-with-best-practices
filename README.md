@@ -126,6 +126,22 @@ To set up translation (i18n), create an account at [Crowdin.com](https://l.crowd
 
 After defining the environment variables in your GitHub Actions, your localization files will be synchronized with Crowdin every time you push a new commit to the `main` branch.
 
+### Documentation
+
+Comprehensive documentation is available in the `docs/` folder:
+
+- **[Project Structure and Best Practices](./docs/project-structure-and-best-practices.md)** - Complete guide on project structure, conventions, and best practices
+- **[Development Workflow](./docs/development-workflow.md)** - Git workflow, commit guidelines, and development process
+
+These documents cover:
+- Technology stack and when to use each tool
+- File naming conventions (kebab-case)
+- Type management (single source of truth)
+- Service layer pattern
+- Component organization rules
+- State management guidelines
+- Code quality standards
+
 ### Project structure
 
 ```shell
@@ -137,14 +153,23 @@ After defining the environment variables in your GitHub Actions, your localizati
 ├── .storybook                      # Storybook folder
 ├── .vscode                         # VSCode configuration
 ├── public                          # Public assets folder
+├── docs                            # Project documentation
+│   ├── project-structure-and-best-practices.md
+│   └── development-workflow.md
 ├── src
 │   ├── app                         # Next JS App (App Router)
 │   ├── components                  # React components
+│   │   ├── ui                      # shadcn/ui components
+│   │   ├── icons                   # Icon components
+│   │   └── providers               # Context providers
+│   ├── features                    # Feature-based modules
+│   ├── hooks                       # Shared reusable hooks
+│   ├── lib                         # Library configurations
 │   ├── libs                        # 3rd party libraries configuration
 │   ├── locales                     # Locales folder (i18n messages)
+│   ├── services                    # API service layer
+│   ├── stores                      # Zustand stores
 │   ├── styles                      # Styles folder
-│   ├── hooks                       # React hooks folder
-│   ├── stores                      # Zustand stores folder
 │   ├── templates                   # Templates folder
 │   ├── types                       # Type definitions
 │   ├── utils                       # Utilities folder
