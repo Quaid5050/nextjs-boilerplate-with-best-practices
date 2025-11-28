@@ -93,6 +93,8 @@ Open http://localhost:3000 with your favorite browser to see your project.
 
 ## 📚 Documentation
 
+> **📖 Quick Navigation:** [Code Structure](./CODE_STRUCTURE.md) • [Libraries](./LIBRARIES.md) • [Configuration](./CONFIGURATION.md) • [Best Practices](./BEST_PRACTICES.md)
+
 <details>
 <summary><b>📁 Code Structure</b></summary>
 
