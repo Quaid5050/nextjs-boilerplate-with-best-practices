@@ -67,32 +67,6 @@ Optional features (easy to add):
 
 - 🔗 Web 3 (Base, MetaMask, Coinbase Wallet, OKX Wallet)
 
-### Philosophy & Best Practices
-
-This boilerplate is built following industry best practices and modern development standards:
-
-- **Best Practices First**: Follows Next.js best practices, TypeScript conventions, and React patterns
-- **Clean Architecture**: Well-organized project structure with clear separation of concerns
-- **Type Safety**: Full TypeScript coverage with strict mode and proper type definitions
-- **Code Quality**: ESLint, Prettier, and automated code quality checks
-- **Testing**: Comprehensive testing setup with Vitest and Playwright
-- **Documentation**: Extensive documentation and inline code comments
-- **Production Ready**: Optimized for production with monitoring, error tracking, and security
-- **Developer Experience**: Prioritizes developer productivity with modern tooling
-- **Maintainability**: Clean, readable code following SOLID principles
-- **Scalability**: Architecture designed to scale with your application
-
-Additional principles:
-
-- Nothing is hidden from you, allowing you to make any necessary adjustments to suit your requirements and preferences.
-- Dependencies are regularly updated on a monthly basis
-- Start for free without upfront costs
-- Easy to customize
-- Minimal code
-- Unstyled template
-- SEO-friendly
-- 🚀 Production-ready
-
 ### Requirements
 
 - Node.js 22+ and pnpm
@@ -117,30 +91,10 @@ pnpm run dev
 
 Open http://localhost:3000 with your favorite browser to see your project.
 
+## 📚 Documentation
 
-### Translation (i18n) setup
-
-For translation, the project uses `next-intl` combined with [Crowdin](https://l.crowdin.com/next-js). As a developer, you only need to take care of the English (or another default language) version. Translations for other languages are automatically generated and handled by Crowdin. You can use Crowdin to collaborate with your translation team or translate the messages yourself with the help of machine translation.
-
-To set up translation (i18n), create an account at [Crowdin.com](https://l.crowdin.com/next-js) and create a new project. In the newly created project, you will be able to find the project ID. You will also need to create a new Personal Access Token by going to Account Settings > API. Then, in your GitHub Actions, you need to define the following environment variables: `CROWDIN_PROJECT_ID` and `CROWDIN_PERSONAL_TOKEN`.
-
-After defining the environment variables in your GitHub Actions, your localization files will be synchronized with Crowdin every time you push a new commit to the `main` branch.
-
-### Documentation
-
-Comprehensive documentation is available in the `docs/` folder:
-
-- **[Project Structure and Best Practices](./docs/project-structure-and-best-practices.md)** - Complete guide on project structure, conventions, and best practices
-- **[Development Workflow](./docs/development-workflow.md)** - Git workflow, commit guidelines, and development process
-
-These documents cover:
-- Technology stack and when to use each tool
-- File naming conventions (kebab-case)
-- Type management (single source of truth)
-- Service layer pattern
-- Component organization rules
-- State management guidelines
-- Code quality standards
+<details>
+<summary><b>📁 Code Structure</b></summary>
 
 ### Project structure
 
@@ -181,6 +135,22 @@ These documents cover:
 └── tsconfig.json                   # TypeScript configuration
 ```
 
+### Documentation
+
+Comprehensive documentation is available in the `docs/` folder:
+
+- **[Project Structure and Best Practices](./docs/project-structure-and-best-practices.md)** - Complete guide on project structure, conventions, and best practices
+- **[Development Workflow](./docs/development-workflow.md)** - Git workflow, commit guidelines, and development process
+
+These documents cover:
+- Technology stack and when to use each tool
+- File naming conventions (kebab-case)
+- Type management (single source of truth)
+- Service layer pattern
+- Component organization rules
+- State management guidelines
+- Code quality standards
+
 ### Customization
 
 You can easily configure Next js Boilerplate by searching the entire project for `FIXME:` to make quick customizations. Here are some of the most important files to customize:
@@ -193,58 +163,10 @@ You can easily configure Next js Boilerplate by searching the entire project for
 
 You have full access to the source code for further customization. The provided code is just an example to help you start your project. The sky's the limit 🚀.
 
-### Commit Message Format
+</details>
 
-The project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification, meaning all commit messages must be formatted accordingly. To help you write commit messages, the project provides an interactive CLI that guides you through the commit process. To use it, run the following command:
-
-```shell
-pnpm run commit
-```
-
-One of the benefits of using Conventional Commits is the ability to automatically generate GitHub releases. It also allows us to automatically determine the next version number based on the types of commits that are included in a release.
-
-### CodeRabbit AI Code Reviews
-
-The project uses [CodeRabbit](https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025), an AI-powered code reviewer. CodeRabbit monitors your repository and automatically provides intelligent code reviews on all new pull requests using its powerful AI engine.
-
-Setting up CodeRabbit is simple, visit [coderabbit.ai](https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025), sign in with your GitHub account, and add your repository from the dashboard. That's it!
-
-### Testing
-
-All unit tests are located alongside the source code in the same directory, making them easier to find. The unit test files follow this format: `*.test.ts` or `*.test.tsx`. The project uses Vitest and React Testing Library for unit testing. You can run the tests with the following command:
-
-```shell
-pnpm run test
-```
-
-### Integration & E2E Testing
-
-The project uses Playwright for integration and end-to-end (E2E) testing. Integration test files use the `*.spec.ts` extension, while E2E test files use the `*.e2e.ts` extension. You can run the tests with the following commands:
-
-```shell
-npx playwright install # Only for the first time in a new environment
-pnpm run test:e2e
-```
-
-### Storybook
-
-Storybook is configured for UI component development and testing. The project uses Storybook with Next.js and Vite integration, including accessibility testing and documentation features.
-
-Stories are located alongside your components in the `src` directory and follow the pattern `*.stories.ts` or `*.stories.tsx`.
-
-You can run Storybook in development mode with:
-
-```shell
-pnpm run storybook
-```
-
-This will start Storybook on http://localhost:6006 where you can view and interact with your UI components in isolation.
-
-To run Storybook tests in headless mode, you can use the following command:
-
-```shell
-pnpm run storybook:test
-```
+<details>
+<summary><b>📦 Libraries</b></summary>
 
 ### State Management with Zustand
 
@@ -1152,6 +1074,19 @@ All components are in `src/components/ui/` and can be customized directly. The t
 
 For more information, visit the [shadcn/ui documentation](https://ui.shadcn.com).
 
+</details>
+
+<details>
+<summary><b>⚙️ Configuration</b></summary>
+
+### Translation (i18n) setup
+
+For translation, the project uses `next-intl` combined with [Crowdin](https://l.crowdin.com/next-js). As a developer, you only need to take care of the English (or another default language) version. Translations for other languages are automatically generated and handled by Crowdin. You can use Crowdin to collaborate with your translation team or translate the messages yourself with the help of machine translation.
+
+To set up translation (i18n), create an account at [Crowdin.com](https://l.crowdin.com/next-js) and create a new project. In the newly created project, you will be able to find the project ID. You will also need to create a new Personal Access Token by going to Account Settings > API. Then, in your GitHub Actions, you need to define the following environment variables: `CROWDIN_PROJECT_ID` and `CROWDIN_PERSONAL_TOKEN`.
+
+After defining the environment variables in your GitHub Actions, your localization files will be synchronized with Crowdin every time you push a new commit to the `main` branch.
+
 ### Deploy to production
 
 You can generate a production build with:
@@ -1234,6 +1169,112 @@ Arcjet is configured with two main features: bot detection and the Arcjet Shield
 - [Arcjet Shield WAF](https://docs.arcjet.com/shield/concepts) will detect and block common attacks such as SQL injection, cross-site scripting, and other OWASP Top 10 vulnerabilities.
 
 Arcjet is configured with a central client at `src/libs/arcjet.ts` that includes the Shield WAF rules. Additional rules are applied when Arcjet is called in `proxy.ts`.
+
+</details>
+
+<details>
+<summary><b>✨ Best Practices</b></summary>
+
+### Philosophy & Best Practices
+
+This boilerplate is built following industry best practices and modern development standards:
+
+- **Best Practices First**: Follows Next.js best practices, TypeScript conventions, and React patterns
+- **Clean Architecture**: Well-organized project structure with clear separation of concerns
+- **Type Safety**: Full TypeScript coverage with strict mode and proper type definitions
+- **Code Quality**: ESLint, Prettier, and automated code quality checks
+- **Testing**: Comprehensive testing setup with Vitest and Playwright
+- **Documentation**: Extensive documentation and inline code comments
+- **Production Ready**: Optimized for production with monitoring, error tracking, and security
+- **Developer Experience**: Prioritizes developer productivity with modern tooling
+- **Maintainability**: Clean, readable code following SOLID principles
+- **Scalability**: Architecture designed to scale with your application
+
+Additional principles:
+
+- Nothing is hidden from you, allowing you to make any necessary adjustments to suit your requirements and preferences.
+- Dependencies are regularly updated on a monthly basis
+- Start for free without upfront costs
+- Easy to customize
+- Minimal code
+- Unstyled template
+- SEO-friendly
+- 🚀 Production-ready
+
+### Commit Message Format
+
+The project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification, meaning all commit messages must be formatted accordingly. To help you write commit messages, the project provides an interactive CLI that guides you through the commit process. To use it, run the following command:
+
+```shell
+pnpm run commit
+```
+
+One of the benefits of using Conventional Commits is the ability to automatically generate GitHub releases. It also allows us to automatically determine the next version number based on the types of commits that are included in a release.
+
+### Testing
+
+All unit tests are located alongside the source code in the same directory, making them easier to find. The unit test files follow this format: `*.test.ts` or `*.test.tsx`. The project uses Vitest and React Testing Library for unit testing. You can run the tests with the following command:
+
+```shell
+pnpm run test
+```
+
+### Integration & E2E Testing
+
+The project uses Playwright for integration and end-to-end (E2E) testing. Integration test files use the `*.spec.ts` extension, while E2E test files use the `*.e2e.ts` extension. You can run the tests with the following commands:
+
+```shell
+npx playwright install # Only for the first time in a new environment
+pnpm run test:e2e
+```
+
+### Storybook
+
+Storybook is configured for UI component development and testing. The project uses Storybook with Next.js and Vite integration, including accessibility testing and documentation features.
+
+Stories are located alongside your components in the `src` directory and follow the pattern `*.stories.ts` or `*.stories.tsx`.
+
+You can run Storybook in development mode with:
+
+```shell
+pnpm run storybook
+```
+
+This will start Storybook on http://localhost:6006 where you can view and interact with your UI components in isolation.
+
+To run Storybook tests in headless mode, you can use the following command:
+
+```shell
+pnpm run storybook:test
+```
+
+### Code Quality and Validation
+
+The project includes several commands to ensure code quality and consistency. You can run:
+
+- `pnpm run lint` to check for linting errors
+- `pnpm run lint:fix` to automatically fix fixable issues from the linter
+- `pnpm run check:types` to verify type safety across the entire project
+- `pnpm run check:deps` help identify unused dependencies and files
+- `pnpm run check:i18n` ensures all translations are complete and properly formatted
+
+#### Bundle Analyzer
+
+Next.js Boilerplate includes a built-in bundle analyzer. It can be used to analyze the size of your JavaScript bundles. To begin, run the following command:
+
+```shell
+pnpm run build-stats
+```
+
+By running the command, it'll automatically open a new browser window with the results.
+
+### CodeRabbit AI Code Reviews
+
+The project uses [CodeRabbit](https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025), an AI-powered code reviewer. CodeRabbit monitors your repository and automatically provides intelligent code reviews on all new pull requests using its powerful AI engine.
+
+Setting up CodeRabbit is simple, visit [coderabbit.ai](https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025), sign in with your GitHub account, and add your repository from the dashboard. That's it!
+
+</details>
 
 ### Useful commands
 

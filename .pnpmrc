@@ -14,3 +14,4 @@ shamefully-hoist=false
 public-hoist-pattern[]=*eslint*
 public-hoist-pattern[]=*prettier*
 
+
